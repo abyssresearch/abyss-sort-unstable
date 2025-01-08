@@ -1,8 +1,8 @@
 #include "wsp_sort_unstable.h"
 
-void wsp_sort_unstable_ascending(unsigned long input_count,
+void wsp_sort_unstable_ascending(const unsigned long input_count,
                                  unsigned long *input) {
-  unsigned long _input;
+  unsigned long input_capture;
   unsigned long gap = (input_count >> 5) + (input_count >> 3) + 1;
   unsigned long i;
   unsigned long j;
@@ -11,18 +11,18 @@ void wsp_sort_unstable_ascending(unsigned long input_count,
     i = gap;
 
     while (i < input_count) {
-      _input = input[i];
+      input_capture = input[i];
       j = i;
 
       while (
         j >= gap &&
-        input[j - gap] > _input
+        input[j - gap] > input_capture
       ) {
         input[j] = input[j - gap];
         j -= gap;
       }
 
-      input[j] = _input;
+      input[j] = input_capture;
       i++;
     }
 
@@ -37,9 +37,9 @@ void wsp_sort_unstable_ascending(unsigned long input_count,
   }
 }
 
-void wsp_sort_unstable_descending(unsigned long input_count,
+void wsp_sort_unstable_descending(const unsigned long input_count,
                                   unsigned long *input) {
-  unsigned long _input;
+  unsigned long input_capture;
   unsigned long gap = (input_count >> 5) + (input_count >> 3) + 1;
   unsigned long i;
   unsigned long j;
@@ -48,18 +48,18 @@ void wsp_sort_unstable_descending(unsigned long input_count,
     i = gap;
 
     while (i < input_count) {
-      _input = input[i];
+      input_capture = input[i];
       j = i;
 
       while (
         j >= gap &&
-        input[j - gap] < _input
+        input[j - gap] < input_capture
       ) {
         input[j] = input[j - gap];
         j -= gap;
       }
 
-      input[j] = _input;
+      input[j] = input_capture;
       i++;
     }
 
