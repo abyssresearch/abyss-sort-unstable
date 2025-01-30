@@ -1,7 +1,7 @@
-#include "wsp_sort_unstable.h"
+#include "abyss_sort_unstable.h"
 
-void wsp_sort_unstable_ascending(const unsigned long input_count,
-                                 unsigned long *input) {
+void abyss_sort_unstable_ascending(const unsigned long input_count,
+                                   unsigned long *input) {
   unsigned long input_capture;
   unsigned long gap = (input_count >> 5) + (input_count >> 3) + 1;
   unsigned long i;
@@ -37,8 +37,8 @@ void wsp_sort_unstable_ascending(const unsigned long input_count,
   }
 }
 
-void wsp_sort_unstable_descending(const unsigned long input_count,
-                                  unsigned long *input) {
+void abyss_sort_unstable_descending(const unsigned long input_count,
+                                    unsigned long *input) {
   unsigned long input_capture;
   unsigned long gap = (input_count >> 5) + (input_count >> 3) + 1;
   unsigned long i;
